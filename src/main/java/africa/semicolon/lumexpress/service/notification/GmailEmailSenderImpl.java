@@ -24,11 +24,11 @@ public class GmailEmailSenderImpl implements EmailSender{
             mimeMessageHelper.setTo(emailDetails.getUserEmail());
             mimeMessageHelper.setText(emailDetails.getMailContent(), true);
             javaMailSender.send(mimeMessage);
-            return String.format("email sent to %s successfully",
+            return String.format("Email sent to %s successfully",
                     emailDetails.getUserEmail());
         } catch (MessagingException e) {
             e.printStackTrace();
         }
-        return String.format("email not sent to %s", emailDetails.getUserEmail());
+        return String.format("Email not sent to %s", emailDetails.getUserEmail());
     }
 }
